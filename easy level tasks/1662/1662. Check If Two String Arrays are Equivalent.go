@@ -8,7 +8,7 @@ func unitedStringArr(arr []string) (unStr string) {
 		unStr += stringElement
 	}
 
-	return
+	return	
 
 }
 
