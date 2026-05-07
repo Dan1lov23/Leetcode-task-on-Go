@@ -33,3 +33,4 @@ func sumOfUnique(nums []int) int {
 func main() {
 	fmt.Println(sumOfUnique([]int{1, 2, 3, 2}))
 }
+
