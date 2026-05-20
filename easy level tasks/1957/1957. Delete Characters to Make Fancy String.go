@@ -1,22 +1,28 @@
 package main
 
 import "fmt"
+import "strings"
 
 func makeFancyString(s string) string {
-    
-	newString := ""
+    var sb strings.Builder
+    sb.Grow(len(s))
 
-	for i := 0; i < len(s); i++ {
-		if i + 1 < len(s) && i + 2 < len(s) && s[i] == s[i + 1] && s[i] == s[i + 2] {
-			//
-		} else {
-			newString += string(s[i])
-		}
-	}
+    count := 0
+    for i := 0; i < len(s); i++ {
+        if i > 0 && s[i] == s[i-1] {
+            count++
+        } else {
+            count = 0
+        }
 
-	return newString
+        if count < 2 {
+            sb.WriteByte(s[i])
+        }
+    }
 
+    return sb.String()
 }
+
 
 func main() {
 	fmt.Println(makeFancyString("aaabaaaa"))
