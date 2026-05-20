@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func makeFancyString(s string) string {
     var sb strings.Builder
@@ -21,6 +23,7 @@ func makeFancyString(s string) string {
     }
 
     return sb.String()
+
 }
 
 
