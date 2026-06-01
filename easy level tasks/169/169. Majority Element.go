@@ -19,7 +19,6 @@ func majorityElement(nums []int) int {
 		} else if len(nums)%2 == 0 && counter >= len(nums)/2 {
 			return element
 		}
-
 	}
 
 	return nums[0]
