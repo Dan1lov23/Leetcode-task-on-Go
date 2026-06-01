@@ -6,22 +6,23 @@ func majorityElement(nums []int) int {
 
 	for a := 0; a < len(nums); a++ {
 
-		element, sum := nums[a], 0
+		element, counter := nums[a], 0
 
 		for b := 0; b < len(nums); b++ {
 			if nums[a] == nums[b] && a != b {
-				sum += nums[b]
+				counter += 1
 			}
 		}
 
-		if len(nums) % 2 != 0 && sum > (len(nums) - 1) / 2 {
+		if len(nums)%2 != 0 && counter >= (len(nums)-1)/2 {
 			return element
-		} else if len(nums) % 2 == 0 && sum > len(nums) / 2 {
+		} else if len(nums)%2 == 0 && counter >= len(nums)/2 {
 			return element
 		}
+
 	}
 
-	return 0
+	return nums[0]
 
 }
 
